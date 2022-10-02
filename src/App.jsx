@@ -1,16 +1,12 @@
-import { useEffect, useState } from "react";
 import "./App.css";
 import "antd/dist/antd.css";
 import { Input, Table } from "antd";
-import { AudioOutlined } from "@ant-design/icons";
-import axios from "axios";
 const { Search } = Input;
 
 import { useDispatch, useSelector } from "react-redux";
 import { getAllUsers } from "./redux/university/action";
 
 function App() {
-  const [dataSource, setDataSource] = useState();
 
   const dispatch = useDispatch();
 
@@ -19,15 +15,6 @@ function App() {
   const onSearch = (value) => {
     dispatch(getAllUsers(value));
   };
-
-  const suffix = (
-    <AudioOutlined
-      style={{
-        fontSize: 16,
-        color: "#1890ff",
-      }}
-    />
-  );
 
   const columns = [
     {
